@@ -12,7 +12,7 @@ def show_results(qnn : str) -> None:
 def first_pipeline():
 
     # Loads the yaml manifest for each component
-    download = kfp.components.load_component_from_file('mnist_data/download_data.yaml')
+    download = kfp.components.load_component_from_file('download_data/download_data.yaml')
     qnn = kfp.components.load_component_from_file('qnn/qnn.yaml')
 
     # Run download_data task
