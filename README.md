@@ -1,8 +1,6 @@
 # Qiskit_Pipeline
 The goal of node-red-quantum-kube is to integrate Kubeflow/Kubebeters with Node-RED, while utilizing Node-RED's low-code modules, while using Kubeflow resources (such as Kubeflow pipeline, Kserve) to enhance its artificial intelligence/machine learning ability.
 
-# Table of contents
-[TOC]
 ## References
 https://github.com/kubeflow/pipelines/tree/1.8.21/backend/api/python_http_client
 
