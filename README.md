@@ -6,6 +6,63 @@ https://github.com/kubeflow/pipelines/tree/1.8.21/backend/api/python_http_client
 
 https://github.com/namgk/node-red-contrib-pythonshell/tree/master
 
+## Explanation of the Code Package
+## Part 1
+### Kubeflow_Qiskit_Pipeline/Qnn_nodered
+Used for executing operations in Node-RED.
+
+### Kubeflow_Qiskit_Pipeline/Qnn_nodered/qnn
+This package contains the necessary components for custom Node-RED nodes.
+
+### package.json
+A standard file that describes the contents of a Node.js module.
+
+### qnn.html
+The appearance of custom nodes.
+
+### qnn.js, qnn0.js
+The main code for custom nodes.
+
+### qnn.py
+A custom Node-RED node whose functionality is executed through the kfp_server_api.ApiClient for Kubeflow Pipeline.
+
+### qnnPipeline.yaml
+To be compiled using Kubeflow_Qiskit_Pipeline/pipeline.py and used within Kubeflow_Qiskit_Pipeline/Qnn_nodered/qnn.py.
+
+## Part 2
+### Kubeflow Pipeline Components Creation
+Required components for creating a Kubeflow Pipeline.
+
+### Kubeflow_Qiskit_Pipeline/download_data
+Used to generate components for downloading data.
+
+### Kubeflow_Qiskit_Pipeline/download_data/Dockerfile
+Description of how the component is run.
+
+### Kubeflow_Qiskit_Pipeline/download_data/download_data.py
+The main execution functionality of the component.
+
+### Kubeflow_Qiskit_Pipeline/download_data/download_data.yaml
+If custom components need to be created, this YAML file must be uploaded to Dockerhub.
+
+### Kubeflow_Qiskit_Pipeline/download_data/requirements.txt
+The names of packages required by the component.
+
+### Kubeflow_Qiskit_Pipeline/qnn
+Used to generate components for qnn.
+
+### Kubeflow_Qiskit_Pipeline/qnn/Dockerfile
+Description of how the component is run.
+
+### Kubeflow_Qiskit_Pipeline/qnn/download_data.py
+The main execution functionality of the component.
+
+### Kubeflow_Qiskit_Pipeline/qnn/qnn.yaml
+If custom components need to be created, this YAML file must be uploaded to Dockerhub.
+
+### Kubeflow_Qiskit_Pipeline/qnn/requirements.txt
+The names of packages required by the component.
+
 ## Instructions for use
 ### prepare in advance
 
@@ -14,11 +71,11 @@ Since this project is focused on integrating Node-RED with Kubeflow, it requires
 
 ### Build container image
 
-You can go to the [examples](./examples/README.md) folder and run `./build.sh` to build the image locally, or just run `./run.sh` and it will read from our public Download the base image from the repository.
+You can go to the [examples](https://github.com/FootprintAI/kube-nodered/tree/main/examples) folder and run `./build.sh` to build the image locally, or just run `./run.sh` and it will read from our public Download the base image from the repository.
 
 ### Execution example
 
-We organize some examples in the [examples](./examples/README.md) folder and pass sensitive information through environment variables. Please refer to the following examples to start individual examples:
+We organize some examples in the [examples](https://github.com/FootprintAI/kube-nodered/tree/main/examples) folder and pass sensitive information through environment variables. Please refer to the following examples to start individual examples:
 ```
 # Enter the folder
 cd kubeflow-Node-RED
@@ -34,7 +91,7 @@ KUBEFLOW_PASSWORD=<your-password> \
 
 ## Kubeflow part:
 ### YAML file for custom process
-Please refer to [Kubeflow Implementation: Add Random Forest Algorithm](https://hackmd.io/@Nhi7So-lTz2m5R6pHyCLcA/Sk1eZFTbh)
+Please refer to [Kubeflow Implementation: Add Random Forest Algorithm](https://towardsdatascience.com/kubeflow-pipelines-how-to-build-your-first-kubeflow-pipeline-from-scratch-2424227f7e5)
 
 ### Take modifying <span>qnn.py<span> as an example
 
