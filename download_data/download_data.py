@@ -37,7 +37,6 @@ def _download_data(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data', type=str)
-    parser.add_argument('--data', type=str)
     args = parser.parse_args()
 
     
